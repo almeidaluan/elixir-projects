@@ -26,5 +26,12 @@ defmodule ExMon.Game.Attack do
     opponent
     |> Game.fetch_player()
     |> Map.put(:life, life)
+    |> update_game(opponent)
+  end
+
+  def update_game(player, opponent) do
+    Game.info()
+    |> Map.put(opponent,player)
+    |> Game.update()
   end
 end

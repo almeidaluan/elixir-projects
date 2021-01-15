@@ -21,4 +21,6 @@ defmodule ExMon.Game do
 
   def fetch_player(player), do: Map.get(info(), player)
 
+  def update(state),do: Agent.update(__MODULE__, fn _ -> state end)
+
 end
